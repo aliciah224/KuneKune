@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Script_DeathAnim : MonoBehaviour
 {
     public Animator playerAnimator;
+    public GameManagerScript gameManager;
 
 
 
@@ -25,6 +27,12 @@ public class Script_DeathAnim : MonoBehaviour
             GameObject.Find("FirstPersonController").GetComponent<FirstPersonController>().walkSpeed = 0;
             GameObject.Find("FirstPersonController").GetComponent<FirstPersonController>().cameraCanMove = false;
             GameObject.Find("FirstPersonController").GetComponent<FirstPersonController>().enableJump = false;
+
+            gameManager.gameOver();
+            Debug.Log("Dead");
+
+
+
 
         }
 
