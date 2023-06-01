@@ -15,13 +15,15 @@ public class TriggerDeathAnim : MonoBehaviour
         {
             Invoke("PlayAnimation", interactDelay);
 
+            Debug.Log("Collision was made between enemy trigger and Player");
+
         }
 
     }
 
     private void PlayAnimation()
     {
-        animator.SetTrigger("play");
+        animator.SetTrigger("PlayerDeath");
 
     }
 }

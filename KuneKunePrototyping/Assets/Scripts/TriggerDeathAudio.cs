@@ -7,9 +7,9 @@ public class TriggerDeathAudio : MonoBehaviour
     public AudioClip clip;
     public float interactDelay = 0;
 
-    private void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Player")
+        if (other.gameObject.tag.Equals("Enemy"))
         {
             Invoke("PlaySound", interactDelay);
 
