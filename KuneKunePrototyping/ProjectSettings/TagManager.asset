@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - Figure1
+  - Figure2
+  - Figure3
   layers:
   - Default
   - TransparentFX
@@ -13,7 +16,7 @@ TagManager:
   - Water
   - UI
   - Player
-  - 
+  - Figures
   - 
   - 
   - 
