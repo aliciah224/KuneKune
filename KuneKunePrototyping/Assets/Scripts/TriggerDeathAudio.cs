@@ -12,6 +12,7 @@ public class TriggerDeathAudio : MonoBehaviour
         if (other.gameObject.tag.Equals("Enemy"))
         {
             Invoke("PlaySound", interactDelay);
+            Debug.Log("Sound collision tirggered");
 
         }
     }
