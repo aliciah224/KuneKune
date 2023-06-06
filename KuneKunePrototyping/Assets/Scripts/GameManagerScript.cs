@@ -6,20 +6,11 @@ using UnityEngine.SceneManagement;
 public class GameManagerScript : MonoBehaviour
 {
     public GameObject gameOverUI;
-    private bool GameScene = false;
 
-    //When game is opened cursor can move
-    public void Start()
+    public void Update()
     {
-        Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-
-        {
-           if (GameScene == true)
-
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-        }
+        Cursor.lockState = CursorLockMode.None;
     }
 
 
@@ -27,15 +18,13 @@ public class GameManagerScript : MonoBehaviour
     public void GameOver()
     {
         gameOverUI.SetActive(true);
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
 
     }
 
     //If Restart button is clicked scene is reloaded
     public void Restart()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene("NewMapTest");
     }
 
     // If Main menu button is clicked Player is taken back to main menu 
@@ -57,11 +46,7 @@ public class GameManagerScript : MonoBehaviour
     {
       
         SceneManager.LoadScene("NewMapTest");
-        GameScene = true;
-        
-       
-
-        
+     
     }
 
     
