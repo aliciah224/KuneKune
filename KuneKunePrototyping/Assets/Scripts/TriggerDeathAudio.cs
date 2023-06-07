@@ -9,7 +9,7 @@ public class TriggerDeathAudio : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag.Equals("Enemy"))
+        if (other.gameObject.tag.Equals(""))
         {
             Invoke("PlaySound", interactDelay);
             Debug.Log("Sound collision tirggered");

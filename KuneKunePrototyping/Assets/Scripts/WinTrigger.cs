@@ -12,7 +12,7 @@ public class WinTrigger : MonoBehaviour
     public bool figure3Placed = false;
    
 
-    //Once each Figure collides with well they turn true
+    //Once each Figure collides with well trigger box they turn true
     public void OnTriggerEnter(Collider other)
 
     {
@@ -37,16 +37,18 @@ public class WinTrigger : MonoBehaviour
 
 
         //If all three Figures are true then Player will load into the winning area
-        if (figure1Placed == true && figure2Placed == true && figure1Placed == true )
+        if (figure1Placed == true && figure2Placed == true && figure3Placed == true )
         {
             SceneManager.LoadScene("WinArea");
 
         }
-       
-   
 
-       
       
+
+
+
+
+
     }
 
 

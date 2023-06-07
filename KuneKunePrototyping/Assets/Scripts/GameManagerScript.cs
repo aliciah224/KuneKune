@@ -24,7 +24,7 @@ public class GameManagerScript : MonoBehaviour
     //If Restart button is clicked scene is reloaded
     public void Restart()
     {
-        SceneManager.LoadScene("NewMapTest");
+        SceneManager.LoadScene("GameArea");
     }
 
     // If Main menu button is clicked Player is taken back to main menu 
@@ -45,8 +45,15 @@ public class GameManagerScript : MonoBehaviour
     public void StartGame()
     {
       
-        SceneManager.LoadScene("NewMapTest");
+        SceneManager.LoadScene("GameArea");
      
+    }
+
+    //If Control button is clicked loads scene where controls are shown
+
+    public void Controls()
+    {
+        SceneManager.LoadScene("ControlsScene");
     }
 
     

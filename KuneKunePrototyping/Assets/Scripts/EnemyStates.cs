@@ -16,13 +16,13 @@ public class EnemyStates : MonoBehaviour
 
 
 
-    // Patrolling 
+    // Patrolling state
 
     public Vector3 walkPoint;
     bool walkPointSet;
     public float walkPointrange;
 
-    //Attacking
+    //Attacking state
 
     public float timeBetweenAttacks;
     bool alreadyAttacked;
@@ -34,7 +34,7 @@ public class EnemyStates : MonoBehaviour
 
    
 
-
+    //Defines what is considered the Player and enemy mob
     private void Awake()
     {
         Player = GameObject.Find("FirstPersonController").transform;
@@ -56,6 +56,7 @@ public class EnemyStates : MonoBehaviour
 
     }
 
+    // Sends enemy mob between the searching and moving to a walkpoint
     private void Patrolling()
     {
         if (!walkPointSet) SearchWalkPoint();
@@ -95,12 +96,14 @@ public class EnemyStates : MonoBehaviour
 
     }
 
+    //When not in patrolling mode, move mob to player
     private void ChasePlayer()
     {
         Mob.SetDestination(Player.position);
            
     }
 
+    //Enemy kills player just from collisions so only code needed here is to look at player
     private void AttackPlayer()
     {
         transform.LookAt(Player);
