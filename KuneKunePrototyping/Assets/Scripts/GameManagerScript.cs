@@ -14,7 +14,7 @@ public class GameManagerScript : MonoBehaviour
     }
 
 
-    // When Player is killed UI is triggered and Cursor can move again
+    // When Player is killed UI is triggered aactive
     public void GameOver()
     {
         gameOverUI.SetActive(true);

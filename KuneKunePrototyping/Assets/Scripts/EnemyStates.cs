@@ -22,15 +22,12 @@ public class EnemyStates : MonoBehaviour
     bool walkPointSet;
     public float walkPointrange;
 
-    //Attacking state
 
-    public float timeBetweenAttacks;
-    bool alreadyAttacked;
 
 
     // States
-    public float sightRange, attackRange;
-    public bool playerInSightRange, playerInAttackRange;
+    public float sightRange;
+    public bool playerInSightRange;
 
    
 
@@ -48,11 +45,11 @@ public class EnemyStates : MonoBehaviour
     {
         //Checks for sight and attack range 
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
-        playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
+       
 
-        if (!playerInSightRange && !playerInAttackRange) Patrolling();
-        if (playerInSightRange && !playerInAttackRange) ChasePlayer();
-        if (playerInAttackRange && playerInSightRange) AttackPlayer();
+        if (!playerInSightRange) Patrolling();
+        if (playerInSightRange) ChasePlayer();
+      
 
     }
 
@@ -96,19 +93,15 @@ public class EnemyStates : MonoBehaviour
 
     }
 
-    //When not in patrolling mode, move mob to player
+    //When not in patrolling mode, move enemy mob to player
     private void ChasePlayer()
     {
         Mob.SetDestination(Player.position);
-           
-    }
-
-    //Enemy kills player just from collisions so only code needed here is to look at player
-    private void AttackPlayer()
-    {
         transform.LookAt(Player);
 
     }
+
+   
 
     
     

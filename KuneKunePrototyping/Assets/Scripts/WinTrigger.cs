@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class WinTrigger : MonoBehaviour
 {
 
-    //All Figure tags have been turned on false initially until they are thrown in the well
+    //All Figure tags have been turned on false initially 
     public bool figure1Placed = false;
     public bool figure2Placed = false;
     public bool figure3Placed = false;

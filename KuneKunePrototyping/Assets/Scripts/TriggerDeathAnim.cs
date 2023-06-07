@@ -1,29 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TriggerDeathAnim : MonoBehaviour
 {
-    public Animator animator;
-    public float interactDelay = 0;
+    public Animator playerAnimator;
+    public GameManagerScript gameManager;
 
-        //Runs when the player collides with the enemy
-
-    private void OnTriggerEnter(Collider other)
+  
+    //When an enemy collides with the Player movement freezes and death animation is run
+    public void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if(other.gameObject.tag.Equals("Enemy"))
         {
-            Invoke("PlayAnimation", interactDelay);
+            playerAnimator.SetTrigger("Trigger_DeathAnim");
+            GameObject.Find("FirstPersonController").GetComponent<FirstPersonController>().walkSpeed = 0;
+            GameObject.Find("FirstPersonController").GetComponent<FirstPersonController>().cameraCanMove = false;
+            GameObject.Find("FirstPersonController").GetComponent<FirstPersonController>().enableJump = false;
 
-            Debug.Log("Collision was made between enemy trigger and Player");
+            gameManager.GameOver();
+            Debug.Log("Dead");
+
+
+
 
         }
 
-    }
-
-    private void PlayAnimation()
-    {
-        animator.SetTrigger("PlayerDeath");
-
+      
     }
 }
