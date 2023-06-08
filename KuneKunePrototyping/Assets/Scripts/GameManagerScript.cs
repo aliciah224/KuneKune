@@ -7,23 +7,31 @@ public class GameManagerScript : MonoBehaviour
 {
     public GameObject gameOverUI;
 
+
     public void Update()
     {
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
+
+        // Cursor.lockState = CursorLockMode.None;
+
+        SetCursorLocked(true);
     }
 
 
     // When Player is killed UI is triggered aactive
     public void GameOver()
     {
+        // Cursor.visible = true;
+        SetCursorLocked(false);
         gameOverUI.SetActive(true);
+
+        //GameManagerScript.SetCursorLocked(false); Use this if you call the function from outside the GameManagerScript - Finn
 
     }
 
     //If Restart button is clicked scene is reloaded
     public void Restart()
     {
+        SetCursorLocked(true);
         SceneManager.LoadScene("GameArea");
     }
 
@@ -44,7 +52,6 @@ public class GameManagerScript : MonoBehaviour
     //From the main menu, if clicked will load game scene 
     public void StartGame()
     {
-      
         SceneManager.LoadScene("GameArea");
      
     }
@@ -61,6 +68,20 @@ public class GameManagerScript : MonoBehaviour
   
 
     
+
+    static public void SetCursorLocked(bool isLocked)
+    {
+        if (isLocked)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Debug.Log("Cursor is now locked!");
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Debug.Log("Cursor is no longer locked!");
+        }
+    }
 
 
     

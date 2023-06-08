@@ -4,46 +4,15 @@ using UnityEngine;
 
 public class TriggerAudio : MonoBehaviour
 {
-    public AudioSource deathAudio;
-    public float interactDelay = 0; 
-    public AudioSource footstepsSound, sprintSound;
+    public AudioSource playSound;
 
-    public void OnTriggerEnter(Collider other)
+    //Simple audio trigger script 
+    private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag.Equals("Enemy"))
+        if(other.gameObject.tag.Equals("Player"))
         {
-  
-            deathAudio.enabled = true;
-            Debug.Log("Sound collision triggered");
+            playSound.Play();
 
-        }
-    }
-
-    //private void PlaySound()
-    //{
-        //udioSource.PlayClipAtPoint(AudioClip, transform.position);
-
-    //}
-
-   
-
-    void Update()
-    {
-        if (UnityEngine.Input.GetKey(KeyCode.W) || UnityEngine.Input.GetKey(KeyCode.A) || UnityEngine.Input.GetKey(KeyCode.D) || UnityEngine.Input.GetKey(KeyCode.S))
-            if (UnityEngine.Input.GetKey(KeyCode.LeftShift))
-            {
-                footstepsSound.enabled = false;
-                sprintSound.enabled = true;
-            }
-            else
-            {
-                footstepsSound.enabled = true;
-                sprintSound.enabled = false;
-            }
-        else
-        {
-            footstepsSound.enabled = false;
-            sprintSound.enabled = false;
         }
     }
 }

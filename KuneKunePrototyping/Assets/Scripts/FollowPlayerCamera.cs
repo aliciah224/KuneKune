@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+//Minimap camera follows player 
 public class FollowPlayerCamera : MonoBehaviour
 {
     public Transform TargetTransform;
@@ -10,6 +12,7 @@ public class FollowPlayerCamera : MonoBehaviour
     private float yOffset;
     private float zOffset;
 
+    //Calculates offset based off the distance between starting position and ending position
     void Start()
     {
         xOffset = transform.position.x - TargetTransform.position.x;
@@ -19,7 +22,7 @@ public class FollowPlayerCamera : MonoBehaviour
         
     }
 
-    
+    //On update, moves camera to the new calculated position, which should keep player in the centre of camera
     void Update()
     {
         gameObject.transform.position = new Vector3(
