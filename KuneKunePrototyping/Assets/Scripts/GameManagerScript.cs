@@ -8,13 +8,13 @@ public class GameManagerScript : MonoBehaviour
     public GameObject gameOverUI;
 
 
-    public void Update()
-    {
+    //public void Update()
+   // {
 
         // Cursor.lockState = CursorLockMode.None;
 
-        SetCursorLocked(true);
-    }
+     //   SetCursorLocked(true);
+  //  }
 
 
     // When Player is killed UI is triggered aactive
