@@ -1961,6 +1961,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8192383490263014532, guid: a90be49053c76c245927a3fd7e461260, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1ca0bab9dd693cd4883d9bb37ae0c419, type: 2}
     - target: {fileID: 919132149155446097, guid: a90be49053c76c245927a3fd7e461260, type: 3}
       propertyPath: m_Name
       value: KuneMonster_Model

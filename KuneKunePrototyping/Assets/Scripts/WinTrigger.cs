@@ -39,6 +39,7 @@ public class WinTrigger : MonoBehaviour
         //If all three Figures are true then Player will load into the winning area
         if (figure1Placed == true && figure2Placed == true && figure3Placed == true )
         {
+            GameManagerScript.SetCursorLocked(false);
             SceneManager.LoadScene("WinArea");
 
         }

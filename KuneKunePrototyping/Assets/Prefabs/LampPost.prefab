@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6767113335601081591}
   - component: {fileID: 9034622561204091364}
   m_Layer: 0
-  m_Name: pCylinder85
+  m_Name: Lamp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 8919208425892444150, guid: 5f49754d8673398428e507e8fa15814b, type: 3}
+  - {fileID: 2100000, guid: 5bb270d17cb16274f86105ee85a1c2de, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -126,8 +126,8 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 0.764151, g: 0.34286982, b: 0.09011213, a: 1}
-  m_Intensity: 1
+  m_Color: {r: 0.8773585, g: 0.44500455, b: 0.012415428, a: 1}
+  m_Intensity: 2
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
