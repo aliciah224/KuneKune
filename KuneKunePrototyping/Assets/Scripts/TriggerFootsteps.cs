@@ -5,7 +5,7 @@ using UnityEngine;
 public class TriggerFootsteps : MonoBehaviour
 {
 
-    public float interactDelay = 0; 
+    
     public AudioSource footstepsSound, sprintSound;
 
  

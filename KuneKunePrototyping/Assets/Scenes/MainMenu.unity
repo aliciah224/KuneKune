@@ -811,7 +811,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1046586682}
         m_TargetAssemblyTypeName: GameManagerScript, Assembly-CSharp
-        m_MethodName: quit
+        m_MethodName: Quit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
