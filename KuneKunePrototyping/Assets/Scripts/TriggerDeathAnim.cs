@@ -21,9 +21,9 @@ public class TriggerDeathAnim : MonoBehaviour
  
             
             playerAnimator.SetTrigger("Trigger_DeathAnim");
-            GameObject.Find("FirstPersonController").GetComponent<FirstPersonController>().walkSpeed = 0;
-            GameObject.Find("FirstPersonController").GetComponent<FirstPersonController>().cameraCanMove = false;
-            GameObject.Find("FirstPersonController").GetComponent<FirstPersonController>().enableJump = false;
+            GameObject.Find("FPC").GetComponent<FirstPersonController>().walkSpeed = 0;
+            GameObject.Find("FPC").GetComponent<FirstPersonController>().cameraCanMove = false;
+            GameObject.Find("FPC").GetComponent<FirstPersonController>().enableJump = false;
 
            
             

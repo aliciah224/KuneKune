@@ -151,11 +151,10 @@ public class FirstPersonController : MonoBehaviour
 
     void Start()
     {
-      //  if(lockCursor)
-     //   {
-     //       Cursor.lockState = CursorLockMode.Locked;
-     //       Cursor.visible = false;
-     //   }
+        if(lockCursor)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+        }
 
         if(crosshair)
         {

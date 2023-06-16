@@ -34,7 +34,7 @@ public class EnemyStates : MonoBehaviour
     //Defines what is considered the Player and enemy mob
     private void Awake()
     {
-        Player = GameObject.Find("FirstPersonController").transform;
+        Player = GameObject.Find("FPC").transform;
         Mob = GetComponent<NavMeshAgent>();
 
     }
