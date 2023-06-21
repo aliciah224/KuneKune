@@ -9,9 +9,7 @@ public class TriggerFootsteps : MonoBehaviour
     public AudioSource footstepsSound, sprintSound;
 
  
-
-   
-    //If there is input from the WASD keys, sounds will play. Depending on the combination of keys either sprinting, walking or no sound is played. 
+    //If input from the WASD, sound will play. Depending on the combination, either sprinting, walking or no sound is played. 
     void Update()
     {
         if (UnityEngine.Input.GetKey(KeyCode.W) || UnityEngine.Input.GetKey(KeyCode.A) || UnityEngine.Input.GetKey(KeyCode.D) || UnityEngine.Input.GetKey(KeyCode.S))

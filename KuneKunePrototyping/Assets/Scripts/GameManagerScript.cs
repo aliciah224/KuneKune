@@ -8,17 +8,14 @@ public class GameManagerScript : MonoBehaviour
     public GameObject gameOverUI;
 
 
-   
-
-
-    // When Player is killed UI is triggered aactive
+    // When Player is killed UI is triggered active
     public void GameOver()
     {
-        // Cursor.visible = true;
+     
         SetCursorLocked(false);
         gameOverUI.SetActive(true);
 
-    //GameManagerScript.SetCursorLocked(false); Use this if you call the function from outside the GameManagerScript - Finn
+    
 
     }
 
@@ -58,10 +55,7 @@ public class GameManagerScript : MonoBehaviour
         SceneManager.LoadScene("ControlsScene");
     }
 
-    
-
-  
-
+   
     
     //Cursor lock/unlock function 
     static public void SetCursorLocked(bool isLocked)
@@ -78,6 +72,6 @@ public class GameManagerScript : MonoBehaviour
         }
     }
 
-
+//GameManagerScript.SetCursorLocked(false); Use this if you call the function from outside the GameManagerScript - Finn
     
 }

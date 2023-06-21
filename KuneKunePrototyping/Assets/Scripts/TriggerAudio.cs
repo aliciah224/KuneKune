@@ -6,7 +6,7 @@ public class TriggerAudio : MonoBehaviour
 {
     public AudioSource playSound;
 
-    //Simple audio trigger script 
+    //Simple audio on trigger enter script
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag.Equals("Player"))
@@ -15,4 +15,7 @@ public class TriggerAudio : MonoBehaviour
 
         }
     }
-}
+} 
+  
+   
+  

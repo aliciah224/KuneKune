@@ -12,7 +12,7 @@ public class TriggerDeathAnim : MonoBehaviour
 
 
    
-    //When an enemy collides with the Player movement freezes and death animation is run
+    //When an enemy collides with the Player, movement freezes and death animation is run
     public void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag.Equals("Enemy"))

@@ -6,6 +6,8 @@ using UnityEngine.AI;
 
 public class EnemyStates : MonoBehaviour
 {
+    //Navmesh and Player Variables 
+    
     public NavMeshAgent Mob;
 
     public Transform Player;
@@ -16,7 +18,7 @@ public class EnemyStates : MonoBehaviour
 
 
 
-    // Patrolling state
+    // Patrolling state variables
 
     public Vector3 walkPoint;
     bool walkPointSet;
@@ -25,13 +27,14 @@ public class EnemyStates : MonoBehaviour
 
 
 
-    // States
+    // Sightrange variables
+
     public float sightRange;
     public bool playerInSightRange;
 
    
 
-    //Defines what is considered the Player and enemy mob
+    // On awake find Player and Mob
     private void Awake()
     {
         Player = GameObject.Find("FPC").transform;
@@ -43,7 +46,7 @@ public class EnemyStates : MonoBehaviour
 
     private void Update()
     {
-        //Checks for sight and attack range 
+        //Checks for sight and attack range and moves to other functions 
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
        
 
@@ -53,7 +56,7 @@ public class EnemyStates : MonoBehaviour
 
     }
 
-    // Sends enemy mob between the searching and moving to a walkpoint
+    // Runs the Patrolling function
     private void Patrolling()
     {
         if (!walkPointSet) SearchWalkPoint();
@@ -75,13 +78,13 @@ public class EnemyStates : MonoBehaviour
 
     }
 
-    //Calculates a random walkpoint to give to enemy 
+    //Calculates a random walkpoint to give to enemy navmesh agent
     private void SearchWalkPoint()
     {
         float randomZ = Random.Range(-walkPointrange, walkPointrange);
         float randomX = Random.Range(-walkPointrange, walkPointrange);
 
-        walkPoint = new Vector3 (transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
+        walkPoint = new Vector3 (transform.position.x + randomX, transform.position.z + randomZ);
 
         if (Physics.Raycast(walkPoint, -transform.up, 2f, whatIsGround))
         {

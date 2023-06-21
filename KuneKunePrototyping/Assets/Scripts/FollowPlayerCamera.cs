@@ -25,10 +25,12 @@ public class FollowPlayerCamera : MonoBehaviour
     //On update, moves camera to the new calculated position, which should keep player in the centre of camera
     void Update()
     {
-        gameObject.transform.position = new Vector3(
+        gameObject.transform.position = new Vector3
+            (
             TargetTransform.position.x + xOffset,
             TargetTransform.position.y + yOffset,
-            TargetTransform.position.z + zOffset);
+            TargetTransform.position.z + zOffset
+            );
 
     }
 }

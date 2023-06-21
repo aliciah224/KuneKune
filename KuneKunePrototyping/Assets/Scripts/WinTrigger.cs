@@ -7,6 +7,7 @@ public class WinTrigger : MonoBehaviour
 {
 
     //All Figure tags have been turned on false initially 
+
     public bool figure1Placed = false;
     public bool figure2Placed = false;
     public bool figure3Placed = false;
@@ -36,7 +37,7 @@ public class WinTrigger : MonoBehaviour
         }
 
 
-        //If all three Figures are true then Player will load into the winning area
+        //If all three Figures are true then Player will load into the winning area and cursor will be unlocked
         if (figure1Placed == true && figure2Placed == true && figure3Placed == true )
         {
             GameManagerScript.SetCursorLocked(false);
